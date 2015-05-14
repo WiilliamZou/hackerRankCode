@@ -106,8 +106,8 @@ int center(int u){
 void getPoints(int u, int p, ll a, ll b, int c){
   for(int v: E[u]) {
     if(p != v){
-      ll na = a + abs(px[u] - px[v]);
-      ll nb = b + abs(py[u] - py[v]);
+      ll na = a + abs(px[u] - px[v]); // h length
+      ll nb = b + abs(py[u] - py[v]); // v length 
       int nc = (c == -1 ? v : c); // assign new color if not exists
       pts[npts++] = {na, nb, nc, POINT};
       pts[npts++] = {W - na, H - nb, nc, QUERY};
