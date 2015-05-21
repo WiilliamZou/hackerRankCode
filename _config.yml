@@ -12,18 +12,18 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: dbyll
+      title: HackerRank 做题思路
 
-description: Stylish Jekyll Theme
+description: HackerRank 有很多有趣有难度的好题，值得记录和回味
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
-  github: dbtek
-  twitter: dbtek
-  pinterest: asd123
-  linkedin: asd123
-  bio: Your stylish, minimalist theme!
-  email_md5: 726351295ec82e145928582f595aa3aa
+  name: 大虾仁
+  email: yunxiaozou@gmail.com
+  github: WiilliamZou
+  #twitter: dbtek
+  #pinterest: asd123
+  #linkedin: asd123
+  bio:  minimalist is good !
+ # email_md5: 726351295ec82e145928582f595aa3aa
 
 rss_path: feed.xml
 categories_path: categories.html

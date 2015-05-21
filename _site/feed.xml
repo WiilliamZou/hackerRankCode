@@ -21,6 +21,22 @@
 			</item>
 		
 			<item>
+				<title>hello world</title>
+				<description>&lt;p&gt;hello world!!!!!!&lt;/p&gt;
+
+&lt;p&gt;test 公式 &lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}&lt;/script&gt;
+\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)&lt;/p&gt;
+</description>
+				<pubDate>Tue, 19 May 2015 00:00:00 -0400</pubDate>
+				<link>/general/setup/demo/2015/05/19/helloWorld.html</link>
+				<guid isPermaLink="true">/general/setup/demo/2015/05/19/helloWorld.html</guid>
+			</item>
+		
+			<item>
 				<title>Hello World!</title>
 				<description>&lt;p&gt;&lt;strong&gt;dbyll&lt;/strong&gt; is minimalist, stylish theme for jekyll. Supports gravatar, account links (github, twitter, e-mail, pinterest, résume file) and a bio.  &lt;/p&gt;
 
