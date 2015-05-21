@@ -1,5 +1,8 @@
 # hackerRankCode
-![](http://www.forkosh.com/mathtex.cgi?f(x)=\int_{-\infty}^xe^{-t^2}dt)
+![](http://www.forkosh.com/mathtex.cgi?f(x)=\int_{-\infty}^xe^{-t^2}dr)
+
+
+
 hi chen, guiyuan
 
 I think the best practice to polish programming skill is to learn from other's code. It would be appreciated if you guys can push your codes of problems on hackerrank to this repository. We can learn from each other.
