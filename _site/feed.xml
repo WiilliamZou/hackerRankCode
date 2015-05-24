@@ -30,7 +30,7 @@
 &lt;h3 id=&quot;section-1&quot;&gt;输入格式&lt;/h3&gt;
 
 &lt;p&gt;输入文件第一行包含一个整数, T, 表示后面测试数据的组数。 每组测试数据包含3行。 第一行包含 N, 整数的个数。 
-第三行包含_N个空格分隔的整数，第ith个整数表示数组里第i个元素 A[i].&lt;/p&gt;
+第三行包含N个空格分隔的整数，第i个整数表示数组里第i个元素 A[i].&lt;/p&gt;
 
 &lt;h3 id=&quot;section-2&quot;&gt;输出格式&lt;/h3&gt;
 
@@ -118,7 +118,7 @@
 
 &lt;p&gt;如果 root 所处的位置是 even level, 那么：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;contribution from root = (-1) * (total number of trees) * alpha * a[k]
+&lt;pre&gt;&lt;code&gt;contribution from root = (-1) * (total number of trees) * beta * a[k]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;那么最后一个问题就是计算 tree count. 这是 &lt;a href=&quot;http://en.wikipedia.org/wiki/Catalan_number&quot;&gt;Catalan number&lt;/a&gt;.&lt;/p&gt;
