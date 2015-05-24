@@ -89,13 +89,13 @@ Roy对[二叉搜索树(BST)](https://en.wikipedia.org/wiki/Binary_search_tree)�
 
 实际上是一个典型的dynamic programming 的题目。  这里有一个明显的递归。这个应该是解体的线索：
 
-```python
+{% highlight python %}
 ans[i][j] = 0
 for each_item in [i..j]:
 	ans[i][j] += ans[i][j] = ans[0][i - 1] * (number of right subtrees) 
 	ans[i][j] += ans[j + 1][n - 1] * (number of left subtrees) 
 	ans[i][j] += (contribution from root)
-```
+{% endhighlight %}
 
 
 
