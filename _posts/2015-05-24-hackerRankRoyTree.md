@@ -107,7 +107,7 @@ ans[i][k-1] 和 ans[k+1][j-1] 都可以通过dynamic programming 的数组中读
 
 如果 root 所处的位置是 even level, 那么：  
 
-	contribution from root = (-1) * (total number of trees) * alpha * a[k]
+	contribution from root = (-1) * (total number of trees) * beta * a[k]
 
 那么最后一个问题就是计算 tree count. 这是 [Catalan number](http://en.wikipedia.org/wiki/Catalan_number). 
 
