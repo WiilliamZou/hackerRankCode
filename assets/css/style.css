@@ -1,6 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
 
-body{
+
+
+
+body ~ .highlight{
 	color: #2c3e50;
 }
 
@@ -44,7 +47,7 @@ a.nav-link:hover { color: #777 }
 }
 
 #contact-list li .fa,
-article .share .btn {
+article .share .btn ~.highlight {
 	-o-transition:color .2s ease-out, background 1s ease-in;
   -ms-transition:color .2s ease-out, background 1s ease-in;
   -moz-transition:color .2s ease-out, background 1s ease-in;
@@ -86,7 +89,7 @@ article .share .gplus:hover {
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
 }
 
-article{
+article ~.highlight{
 	margin-bottom: 40px;
 }
 
@@ -105,8 +108,8 @@ article {
 	padding: 0 5% 0;
 }
 
-article.home div a, article.home pre a { color: #2c3e50; }
-article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
+article.home  ~.highlight div a , article.home ~.highlight  pre a { color: #2c3e50; }
+article.home div ~.highlight  a:hover, article.home ~.highlight  pre a:hover { color: #2c3e50; text-decoration: none; }
 article img { max-width: 100%; }
 
 h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
@@ -182,4 +185,6 @@ footer {
 ul.dropdown-menu>li>a>i.fa {
     width: 1.3em;
 }
+
+
 
