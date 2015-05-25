@@ -84,7 +84,7 @@ class Shelf {
 
 然后运行，实现应该是没有错，但是问题是：超时。
 
-![time out :(](http://i.imgur.com/xUodMyR.png)
+![time out :(](http://i.imgur.com/3aFz6df.png)
 
 两个主要方法的时间复杂度：
 
