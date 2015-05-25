@@ -4,6 +4,7 @@ title:  Roy and alpha-beta trees
 categories: [hackerrank]
 tags: [algorithm, binary search tree, dynamic programming, difficult]
 fullview: false
+shortinfo: true
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>

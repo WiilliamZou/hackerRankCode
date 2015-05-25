@@ -4,6 +4,7 @@ title:  library query
 categories: [hackerrank]
 tags: [algorithm, fenwick tree, advanced]
 fullview: false
+shortinfo: true
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
