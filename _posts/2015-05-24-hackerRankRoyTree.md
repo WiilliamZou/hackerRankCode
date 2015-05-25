@@ -3,7 +3,7 @@ layout: post
 title:  Roy and alpha-beta trees
 categories: [hackerrank]
 tags: [algorithm, binary search tree, dynamic programming, difficult]
-shortinfo: true
+shortinfo: false
 fullview: false
 
 ---
