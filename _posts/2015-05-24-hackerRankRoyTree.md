@@ -2,7 +2,7 @@
 layout: post
 title:  hackerRank 题目 - Roy and alpha-beta trees
 categories: [hackerrank]
-tags: [algorithm, binary search tree, dynamic programming]
+tags: [algorithm, binary search tree, dynamic programming, difficult]
 fullview: true
 ---
 
