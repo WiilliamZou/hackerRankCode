@@ -3,7 +3,7 @@ layout: post
 title:  Roy and alpha-beta trees
 categories: [hackerrank]
 tags: [algorithm, binary search tree, dynamic programming, difficult]
-description: 一道dynamic programming 和 binary search tree 的题目
+shortinfo: 一道dynamic programming 和 binary search tree 的题目
 fullview: false 
 
 ---

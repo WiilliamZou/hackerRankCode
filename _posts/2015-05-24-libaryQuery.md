@@ -4,7 +4,7 @@ title:  library query
 categories: [hackerrank]
 tags: [algorithm, fenwick tree, advanced]
 fullview: false
-description: 一道关于fenwick tree 的题目
+shortinfo: 一道关于fenwick tree 的题目
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
