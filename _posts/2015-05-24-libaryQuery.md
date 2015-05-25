@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  hackerRank 题目 - library query
+title:  library query
 categories: [hackerrank]
 tags: [algorithm, fenwick tree, advanced]
 fullview: true
