@@ -13,7 +13,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: HackerRank 做题思路
+      title: HackerRank 解体笔记
 
 description: HackerRank 有很多有趣有难度的好题，值得记录和回味
 author:
