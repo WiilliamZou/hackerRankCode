@@ -245,3 +245,131 @@ int main()
     return 0;
 }
 {% endhighlight %}
+
+{% highlight c++ %}
+#include <set>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+#define SIZE 32
+#define TOTAL ((1000 + SIZE - 1) / SIZE)
+#define MAX 10000
+
+struct BIT {
+    int tree[MAX];
+    int n;
+
+    BIT() {}
+
+    void init(int n) {
+        this->n = n;
+        memset(tree, 0, sizeof(tree));
+    }
+
+    void update(int at, int by) {
+        while (at < n) {
+            tree[at] += by;
+            at |= at + 1;
+        }
+    }
+
+    int query(int at) {
+        int res = 0;
+        while (at >= 0) {
+            res += tree[at];
+            at = (at & at + 1) - 1;
+        }
+        return res;
+    }
+};
+
+BIT bucket[TOTAL];
+BIT single[1000];
+int n;
+
+int a[MAX];
+
+void update(int x, int k) {
+    int old_idx = a[x] / SIZE;
+    int new_idx = k / SIZE;
+
+    bucket[old_idx].update(x, -1);
+    bucket[new_idx].update(x, 1);
+
+    single[a[x]].update(x, -1);
+    single[k].update(x, 1);
+
+    a[x] = k;
+}
+
+int query(int x, int y, int k) {
+    int cnt = 0;
+    for (int i = 0; i < TOTAL; i++) {
+        int cur = 0;
+        cur += bucket[i].query(y);
+        if (x > 0) cur -= bucket[i].query(x - 1);
+
+        if (cnt + cur >= k) {
+            for (int j = i * SIZE; j < i * SIZE + SIZE; j++) {
+                cur = 0;
+                cur += single[j].query(y);
+                if (x > 0) cur -= single[j].query(x - 1);
+
+                if (cnt + cur >= k) return j;
+                else cnt += cur;
+            }
+        }
+        else {
+            cnt += cur;
+        }
+    }
+}
+
+void solve() {
+    scanf("%d", &n);
+
+    for (int i = 0; i < TOTAL; i++) bucket[i].init(n);
+    for (int i = 0; i < 1000; i++) single[i].init(n);
+
+    for (int i = 0; i < n; i++) {
+        int x;
+        scanf("%d", &x);
+        x--;
+
+        a[i] = x;
+        single[x].update(i, 1);
+        bucket[x / SIZE].update(i, 1);
+    }
+
+    int q;
+    scanf("%d", &q);
+    for (int i = 0; i < q; i++) {
+        int type;
+        scanf("%d", &type);
+        if (type == 0) {
+            int x, y, k;
+            scanf("%d%d%d", &x, &y, &k);
+            printf("%d\n", query(x - 1, y - 1, k) + 1);
+        }
+        else {
+            int x, k;
+            scanf("%d%d", &x, &k);
+            update(x - 1, k - 1);
+        }
+    }
+}
+
+int main() {
+    // freopen("library-query.txt", "r", stdin);
+    int T;
+    scanf("%d", &T);
+    while (T--) {
+        solve();
+    }
+    return 0;
+}
+{% endhighlight %}
