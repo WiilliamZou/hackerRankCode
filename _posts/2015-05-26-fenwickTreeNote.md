@@ -9,7 +9,7 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-这个帖子是关于Binary Indexed Trees 的学习笔记。
+这个帖子是关于Binary Indexed Trees 的学习笔记。Binary Index Tree 的别名是 fenwick tree. 
 
 根据 [wiki](http://en.wikipedia.org/wiki/Fenwick_tree) 的解释，fenwick tree 是对数组 *A[0..n]* 操作的优化，核心操作如下：
 
@@ -28,4 +28,23 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 
 在要求时间复杂度的题目中， fenwick tree 还是有相当的用武之地的。 
 
-当然在题目中 fenwick tree 是有技巧的，比如这道题 [library query](/hackerRankCode/hackerrank/2015/05/24/libaryQuery.html)
+当然在题目中 fenwick tree 是有技巧的，比如这道题 [library query](/hackerRankCode/hackerrank/2015/05/24/libaryQuery.html)  
+
+按照 [top coder 文章](http://en.wikipedia.org/wiki/Fenwick_tree) 的介绍：
+
+	Fenwick Tree is often used for storing frequencies and manipulating cumulative frequency tables.
+	
+
+一个例子程序如下： 
+
+	例题1-1
+	设想有n个箱子，相关的操作如下：
+	1. 在第i个箱子里放入水晶球
+	2. 计算第l个箱子到第r个箱子中水晶球的个数总和
+	假设 m 个操作
+
+如果我们用数组实现，假设有m次操作，naive implementation 的时间复杂度是 \\(O(m \times n)\\)，但是如果采用 binary index tree, 时间复杂度是 \\(O(m \times log(n))\\)。还是不小的提高。 
+
+	例题1-1 实现
+	naive 实现：\\(O(m * n)\\)
+	binary tree index 实现： \\(O(m \times log(n))\\)
