@@ -9,7 +9,7 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-这个帖子是关于Binary Indexed Trees 的学习笔记。Binary Index Tree 的别名是 fenwick tree. 
+这个帖子是关于Binary Indexed Trees 的学习笔记。Binary Index Tree 的别名是 fenwick tree. 原文章来自于 [top coder](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/).
 
 根据 [wiki](http://en.wikipedia.org/wiki/Fenwick_tree) 的解释，fenwick tree 是对数组 *A[0..n]* 操作的优化，核心操作如下：
 
@@ -30,7 +30,7 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 
 当然在题目中 fenwick tree 是有技巧的，比如这道题 [library query](/hackerRankCode/hackerrank/2015/05/24/libaryQuery.html)  
 
-按照 [top coder 文章](http://en.wikipedia.org/wiki/Fenwick_tree) 的介绍：
+按照 [top coder 文章](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/) 的介绍：
 
 >Fenwick Tree is often used for storing frequencies and manipulating cumulative frequency tables.
 	
