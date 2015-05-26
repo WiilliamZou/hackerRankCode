@@ -95,7 +95,7 @@ tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 12 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29
 query 函数可以这样实现：
 
 {% highlight java %}
-int read(int idx){
+int query(int idx){
     int sum = 0;
     while (idx > 0){
         sum += tree[idx];
@@ -104,3 +104,10 @@ int read(int idx){
     return sum;
 }  
 {% endhighlight %}
+
+update 的实现：
+
+{% highlight java %}
+void update(int idx ,int val){    while (idx <= MaxVal){        tree[idx] += val;        idx += (idx & -idx);    }}
+{% endhighlight %}
+
