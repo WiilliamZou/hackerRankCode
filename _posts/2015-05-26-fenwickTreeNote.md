@@ -87,7 +87,7 @@ tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 12 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29
 
 比如说， tree[16] 就是 f[1－16] 的和，而 tree[10] 是 f[9 － 10] 的和。  
 
-### Imagee 1.1 -- tree of responsibility for indexes (bar shows range of frequencies accumulated in top element)
+### Image 1.1 -- tree of responsibility for indexes (bar shows range of frequencies accumulated in top element)
 
 ![tree of responsibility for indexes (bar shows range of frequencies accumulated in top element)
 ](http://community.topcoder.com/i/education/binaryIndexedTrees/BITimg.gif)
@@ -228,4 +228,26 @@ void updatey(int x , int y , int val){
 
 {% endhighlight %}
 
+query 的 code：
+{% highlight java %}
+int query(int x, int y){    int sum = 0, ;    while (x > 0){    	sum += queryy(x, y);    	x -= (x & -x);    }    return sum;}
+
+int queryy(int y) {
+	int sum  = 0;
+	while (y > 0) {
+		sum += tree[x][y];
+		y -= (y & -y);
+	}
+	return sum;
+}
+{% endhighlight %}
+
+其实用的是类似于 计算几何中 [sweep line](https://www.topcoder.com/community/data-science/data-science-tutorials/line-sweep-algorithms/) 算法。
+
+粗略的看，这是一个两层的 binary indexed tree. 看张图可能更加清晰：
+
+
+### Image 1.2 BIT is array of arrays, so this is two-dimensional BIT (size 16 x 8).
+Blue fields are fields which we should update when we are updating index (5 , 3).
+![](http://community.topcoder.com/i/education/binaryIndexedTrees/bit2d.gif)
 
