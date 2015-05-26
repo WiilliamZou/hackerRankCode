@@ -67,16 +67,20 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 
 tree[i] 和 f[i] 的对应关系：
 
->tree[idx] is sum of frequencies from index (idx – 2^r + 1) to index idx (look at the Table 1.1 for clarification). We also write that idx is responsible for indexes from (idx - 2^r + 1) to idx.
+>idx is some index of BIT. r is a position in idx of the last digit 1 (from left to right) in binary notation. tree[idx] is sum of frequencies from index \\(idx – 2^r + 1\\) to index idx (look at the Table 1.1 for clarification). We also write that idx is responsible for indexes from \\(idx - 2^r + 1\\) to idx.
 
 
 看一个例子应该清楚许多：
+
 
  i | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16  
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 f[i] | 1 | 0 | 2 | 1 | 1 | 3 | 0 | 4 | 2 | 5 | 2 | 2 | 3 | 1 | 0 | 2
 c[i] | 1 | 1 | 3 | 4 | 5 | 8 | 8 | 12 | 14 | 19 | 21 | 23 | 26 | 27 | 27 | 29  
-tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 12 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29 
+tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 12 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29 |  
+[Table caption, works as a reference][section-mmd-tables-table1]
+
+  
 
 
-比如说， tree[16] 就是 1－16 的和，而 tree[10] 是 9 － 10 的 和。  
+比如说， tree[16] 就是 f[1－16] 的和，而 tree[10] 是 f[9 － 10] 的和。  
