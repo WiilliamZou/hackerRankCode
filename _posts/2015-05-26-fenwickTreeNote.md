@@ -125,7 +125,9 @@ void scale (int c) {
 
 ###  Find index with given cumulative frequency
 
-如果元素是非负的，那么 cumulative frequency 是一个 ascending sorted array. 可以考虑用 binary search 强化查找。
+如果元素是非负的，那么 cumulative frequency 是一个 ascending sorted array. 可以考虑用 binary search 强化查找。确定 binary index 的每一个bit。
+
+其实也不能叫 binary search. 因为没有 binary 的部分，实际上是确定idx 的每一个bit. 
 
 {% highlight java %}
 // if in tree exists more than one index with a same
@@ -179,3 +181,13 @@ int findG(int cumFre){
         return idx;
 }
 {% endhighlight %} 
+
+> Example for cumulative frequency 21 and function find:
+
+ Iteration | description 
+--- | --- 
+first iteration | tIdx is 16; tree[16] is greater than 21; half bitMask and continue  
+second iteration | tIdx is 8; tree[8] is less than 21, so we should include first 8 indexes in result, remember idx because we surely know it is part of result; subtract tree[8] of cumFre (we do not want to look for the same cumulative frequency again – we are looking for another cumulative frequency in the rest/another part of tree); half bitMask and contiue  
+Third iteration | tIdx is 12; tree[12] is greater than 9 (there is no way to overlap interval 1-8, in this example, with some further intervals, because only interval 1-16 can overlap); half bitMask and continue   
+Forth iteration	| tIdx is 10; tree[10] is less than 9, so we should update values; half bitMask and continue  
+Fifth iteration	| tIdx is 11; tree[11] is equal to 2; return index (tIdx)
