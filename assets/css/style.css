@@ -211,7 +211,7 @@ table {
     table tr th :last-child, table tr td :last-child {
       margin-bottom: 0; }
 
-  blockquote {
+  article blockquote  p {
   font-family: Helvetica, arial, sans-serif;
   font-size: 9px;
   border-left: 4px solid #dddddd;
