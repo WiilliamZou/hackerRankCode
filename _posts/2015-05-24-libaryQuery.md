@@ -246,6 +246,8 @@ int main()
 }
 {% endhighlight %}
 
+下面的这个做法是更加OO-style.
+
 {% highlight c++ %}
 #include <set>
 #include <cstdio>
