@@ -47,7 +47,7 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 
 如果我们用数组实现，假设有m次操作，naive implementation 的时间复杂度是 \\(O(m \times n)\\)，但是如果采用 binary index tree, 时间复杂度是 \\(O(m \times log(n))\\)。还是不小的提高。 
 
->例题1-1 实现
+>例题1-1 实现  
 >假设箱子的个数是n, 操作的个数是m。    
 >naive 实现时间复杂度：\\(O(m * n)\\)   
 >binary tree index 实现时间复杂度： \\(O(m \times log(n))\\)   
