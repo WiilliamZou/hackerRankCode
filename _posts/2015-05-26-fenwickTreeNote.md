@@ -182,7 +182,7 @@ int findG(int cumFre){
 }
 {% endhighlight %} 
 
-> Example for cumulative frequency 21 and function find:
+### Example for cumulative frequency 21 and function *find*:
 
  Iteration | description 
 --- | --- 
