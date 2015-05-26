@@ -38,14 +38,17 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 一个例子程序如下： 
 
 >例题1-1   
-设想有n个箱子，相关的操作如下：  
-1. 在第i个箱子里放入水晶球   
-2. 计算第l个箱子到第r个箱子中水晶球的个数总和   
->假设 m 个操作   
+>
+>设想有n个箱子，相关的操作如下：      
+> 1. 在第i个箱子里放入水晶球   
+> 2. 计算第l个箱子到第r个箱子中水晶球的个数总和  
+> 
+>  
 
 如果我们用数组实现，假设有m次操作，naive implementation 的时间复杂度是 \\(O(m \times n)\\)，但是如果采用 binary index tree, 时间复杂度是 \\(O(m \times log(n))\\)。还是不小的提高。 
 
->例题1-1 实现    
->naive 实现：\\(O(m * n)\\)   
->binary tree index 实现： \\(O(m \times log(n))\\)   
+>例题1-1 实现
+>假设箱子的个数是n, 操作的个数是m。    
+>naive 实现时间复杂度：\\(O(m * n)\\)   
+>binary tree index 实现时间复杂度： \\(O(m \times log(n))\\)   
 >
