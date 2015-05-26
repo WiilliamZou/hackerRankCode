@@ -212,6 +212,8 @@ table {
       margin-bottom: 0; }
 
   blockquote {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
   border-left: 4px solid #dddddd;
   padding: 0 15px;
   color: #777777; }
