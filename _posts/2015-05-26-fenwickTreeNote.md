@@ -28,4 +28,4 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 
 在要求时间复杂度的题目中， fenwick tree 还是有相当的用武之地的。 
 
-当然在题目中 fenwick tree 是有技巧的，比如这道题 [library query](/2015/05/24/libaryQuery.html)
+当然在题目中 fenwick tree 是有技巧的，比如这道题 [library query](/hackerRankCode/2015/05/24/libaryQuery.html)
