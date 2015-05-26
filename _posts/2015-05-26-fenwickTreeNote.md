@@ -94,7 +94,7 @@ tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 12 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29
 
 query 函数可以这样实现：
 
-{% highlight java %]
+{% highlight java %}
 int read(int idx){
     int sum = 0;
     while (idx > 0){
