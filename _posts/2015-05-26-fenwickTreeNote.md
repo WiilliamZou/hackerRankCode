@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  fenwick 学习笔记
+title:  Binary Index Tree (fenwick tree) 学习笔记
 categories: [topcoder]
 tags: [algorithm, fenwick tree, 学习笔记]
 fullview: false
@@ -52,3 +52,10 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 >naive 实现时间复杂度：\\(O(m * n)\\)   
 >binary tree index 实现时间复杂度： \\(O(m \times log(n))\\)   
 >
+
+
+下面是关于 BIT 的基本的思想：
+
+>Basic idea   >Each integer can be represented as sum of powers of two. In the same way, cumulative frequency can be represented as sum of sets of subfrequencies. In our case, each set contains some successive number of non-overlapping frequencies.
+>
+
