@@ -122,3 +122,12 @@ void scale (int c) {
 		tree[i] = tree[i] / c;
 }
 {% endhighlight %}
+
+###  Find index with given cumulative frequency
+
+如果元素是非负的，那么 cumulative frequency 是一个 ascending sorted array. 可以考虑用 binary search 强化查找。
+
+{% highlight java %}
+// if in tree exists more than one index with a same// cumulative frequency, this procedure will return// some of them (we do not know which one)// bitMask - initialy, it is the greatest bit of MaxVal // bitMask store interval which should be searchedint find(int cumFre){int idx = 0; // this var is result of function
+w dxt,Example for cumulative frequency 21 and function find:First tIdx is 16; tree[16] is greater than 21; half bitMask and iterationcontinueSecond tIdx is 8; tree[8] is less than 21, so we should include first 8 iterationindexes in result, remember idx because we surely know it ispart of result; subtract tree[8] of cumFre (we do not want to look for the same cumulative frequency again – we arewhile ((bitMask != 0) && (idx < MaxVal)){ // nobody likes overflo int tIdx = idx + bitMask; // we make midpoint of intervalif (cumFre == tree[tIdx]) // if it is equal, we just return i            return tIdx;        else if (cumFre > tree[tIdx]){                // if tree frequency "can fit" into cumFre,// then include itidx = tIdx; // update indexcumFre -= tree[tIdx]; // set frequency for next loop}bitMask >>= 1; // half current interval }if (cumFre != 0) // maybe given cumulative frequency doesn't exis return -1;    else        return idx;}// if in tree exists more than one index with a same // cumulative frequency, this procedure will return // the greatest oneint findG(int cumFre){int idx = 0;    while ((bitMask != 0) && (idx < MaxVal)){        int tIdx = idx + bitMask;        if (cumFre >= tree[tIdx]){                // if current cumulative frequency is equal to cumFre                // we are still looking for higher index (if exists)idx = tIdx;            cumFre -= tree[tIdx];        }        bitMask >>= 1;    }    if (cumFre != 0)        return -1;    else        return idx;}
+{% endhighlight %} 
