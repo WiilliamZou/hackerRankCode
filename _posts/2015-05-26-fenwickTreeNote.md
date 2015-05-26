@@ -197,8 +197,33 @@ Fifth iteration	| tIdx is 11; tree[11] is equal to 2; return index (tIdx)
 
 
 ## 2-D Binary Indexed Tree
+
+这是一个非常 fancy 的数据结构，非常的巧妙和优雅。
 一个例题如下：
 
 >BIT can be used as a multi-dimensional data structure. Suppose you have a plane with dots (with non-negative coordinates). You make three queries:   1. setdotat(x,y)   2. remove dot from (x , y)   3. count number of dots in rectangle (0 , 0), (x , y) – where (0 , 0) if down-left corner, (x , y) is up-right corner and sides are parallel to x-axis and y-axis.   
 
-
+If m is the number of queries, \\(max\_x\\) is maximum x coordinate, and \\(max\_y\\) is maximum y coordinate, then the problem should be solved in \\(O(m \times log (max\_x) \times log (max\_y))\\). In this case, each element of the tree will contain array – (tree[\\(max\_x\\)][\\(max\_y\\)]). Updating indexes of x-coordinate is the same as before. For example, suppose we are setting/removing dot (a , b). We will call _update(a , b , 1)_ / _update(a , b , -1)_. 
+
+###这个非常漂亮的思维
+
+update 的 code: 
+
+{% highlight java %}
+void update(int x , int y , int val){
+    while (x <= max_x){
+        updatey(x , y , val); 
+        // this function should update array tree[x] 
+        x += (x & -x); 
+    }
+}
+
+void updatey(int x , int y , int val){
+    while (y <= max_y){
+        tree[x][y] += val;
+        y += (y & -y); 
+    }
+}
+
+
+{% endhighlight %}
