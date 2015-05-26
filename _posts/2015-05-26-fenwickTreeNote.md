@@ -92,6 +92,15 @@ tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 12 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29
 >Suppose we are looking for cumulative frequency of index 13 (for the first 13 elements). In binary notation, 13 is equal to 1101. Accordingly, we will calculate c[1101] = tree[1101] + tree[1100] + tree[1000].
 
 
-i | dafda   
--- | - 
-  
+query 函数可以这样实现：
+
+{% highlight java %]
+int read(int idx){
+    int sum = 0;
+    while (idx > 0){
+        sum += tree[idx];
+        idx -= (idx & -idx);
+    }
+    return sum;
+}  
+{% endhighlight %}
