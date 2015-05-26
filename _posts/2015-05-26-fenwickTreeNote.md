@@ -11,6 +11,9 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 
 这个帖子是关于Binary Indexed Trees 的学习笔记。Binary Index Tree 的别名是 fenwick tree. 原文章来自于 [top coder](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/).
 
+
+## Binary Indexed Tree
+
 根据 [wiki](http://en.wikipedia.org/wiki/Fenwick_tree) 的解释，fenwick tree 是对数组 *A[0..n]* 操作的优化，核心操作如下：
 
 * *update(k, val)*: 将 *A[k]* 的值改成val。
@@ -191,3 +194,11 @@ second iteration | tIdx is 8; tree[8] is less than 21, so we should include firs
 Third iteration | tIdx is 12; tree[12] is greater than 9 (there is no way to overlap interval 1-8, in this example, with some further intervals, because only interval 1-16 can overlap); half bitMask and continue   
 Forth iteration	| tIdx is 10; tree[10] is less than 9, so we should update values; half bitMask and continue  
 Fifth iteration	| tIdx is 11; tree[11] is equal to 2; return index (tIdx)
+
+
+## 2-D Binary Indexed Tree
+一个例题如下：
+
+>BIT can be used as a multi-dimensional data structure. Suppose you have a plane with dots (with non-negative coordinates). You make three queries:   1. setdotat(x,y)   2. remove dot from (x , y)   3. count number of dots in rectangle (0 , 0), (x , y) – where (0 , 0) if down-left corner, (x , y) is up-right corner and sides are parallel to x-axis and y-axis.   
+
+
