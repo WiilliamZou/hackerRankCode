@@ -92,7 +92,7 @@ tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 12 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29
 >Suppose we are looking for cumulative frequency of index 13 (for the first 13 elements). In binary notation, 13 is equal to 1101. Accordingly, we will calculate c[1101] = tree[1101] + tree[1100] + tree[1000].
 
 
-query 函数可以这样实现：
+### query 函数可以这样实现：
 
 {% highlight java %}
 int query(int idx){
@@ -105,9 +105,20 @@ int query(int idx){
 }  
 {% endhighlight %}
 
-update 的实现：
+### update 的实现：
 
 {% highlight java %}
 void update(int idx ,int val){    while (idx <= MaxVal){        tree[idx] += val;        idx += (idx & -idx);    }}
 {% endhighlight %}
 
+
+具体实现一般包含两个数组，*tree* 和原始的 *array*。
+
+### scale 的实现
+
+{% highlight java %}
+void scale (int c) {
+	for (int i = 1; i <= MaxVal; i++)
+		tree[i] = tree[i] / c;
+}
+{% endhighlight %}
