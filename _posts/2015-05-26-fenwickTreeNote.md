@@ -205,7 +205,7 @@ Fifth iteration	| tIdx is 11; tree[11] is equal to 2; return index (tIdx)
 
 If m is the number of queries, \\(max\_x\\) is maximum x coordinate, and \\(max\_y\\) is maximum y coordinate, then the problem should be solved in \\(O(m \times log (max\_x) \times log (max\_y))\\). In this case, each element of the tree will contain array – (tree[\\(max\_x\\)][\\(max\_y\\)]). Updating indexes of x-coordinate is the same as before. For example, suppose we are setting/removing dot (a , b). We will call _update(a , b , 1)_ / _update(a , b , -1)_. 
 
-###这个非常漂亮的思维
+###这个非常漂亮的想法
 
 update 的 code: 
 
@@ -227,3 +227,5 @@ void updatey(int x , int y , int val){
 
 
 {% endhighlight %}
+
+
