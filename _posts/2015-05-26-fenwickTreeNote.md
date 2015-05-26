@@ -73,16 +73,26 @@ tree[i] 和 f[i] 的对应关系：
 看一个例子应该清楚许多：
 
 
+
+### Table 1.1 BST 和对应的数组
  i | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16  
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 f[i] | 1 | 0 | 2 | 1 | 1 | 3 | 0 | 4 | 2 | 5 | 2 | 2 | 3 | 1 | 0 | 2
 c[i] | 1 | 1 | 3 | 4 | 5 | 8 | 8 | 12 | 14 | 19 | 21 | 23 | 26 | 27 | 27 | 29  
 tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 12 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29 |  
   
-[Table1]  
+  
+
   
 
   
 
 
 比如说， tree[16] 就是 f[1－16] 的和，而 tree[10] 是 f[9 － 10] 的和。  
+
+### Imagee 1.1 -- tree of responsibility for indexes (bar shows range of frequencies accumulated in top element)
+
+![tree of responsibility for indexes (bar shows range of frequencies accumulated in top element)
+](http://community.topcoder.com/i/education/binaryIndexedTrees/BITimg.gif)
+
+>Suppose we are looking for cumulative frequency of index 13 (for the first 13 elements). In binary notation, 13 is equal to 1101. Accordingly, we will calculate c[1101] = tree[1101] + tree[1100] + tree[1000].
