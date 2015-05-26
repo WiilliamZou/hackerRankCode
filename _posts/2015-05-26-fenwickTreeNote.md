@@ -154,4 +154,28 @@ int find(int cumFre){
     else
         return idx;
 }
+
+
+
+// if in tree exists more than one index with a same
+// cumulative frequency, this procedure will return 
+// the greatest one
+int findG(int cumFre){
+    int idx = 0;
+    
+    while ((bitMask != 0) && (idx < MaxVal)){
+        int tIdx = idx + bitMask;
+        if (cumFre >= tree[tIdx]){ 
+                // if current cumulative frequency is equal to cumFre, 
+                // we are still looking for higher index (if exists)
+            idx = tIdx;
+            cumFre -= tree[tIdx];
+        }
+        bitMask >>= 1;
+    }
+    if (cumFre != 0)
+        return -1;
+    else
+        return idx;
+}
 {% endhighlight %} 
