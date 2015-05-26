@@ -98,3 +98,5 @@ class Shelf {
 * query: \\(O(log(n))\\)
 
 应该是需要用 [fenwick tree](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)，先看看算法材料再来做吧。
+
+似乎应该用 2-D fenwick tree. 
