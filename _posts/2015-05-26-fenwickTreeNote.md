@@ -59,3 +59,24 @@ shortinfo: 关于 topcoder 的一片blog 的学习笔记
 >Basic idea   >Each integer can be represented as sum of powers of two. In the same way, cumulative frequency can be represented as sum of sets of subfrequencies. In our case, each set contains some successive number of non-overlapping frequencies.
 >
 
+
+文章中描述的基本概念：
+
+>Notation  >BIT – Binary Indexed Tree  >MaxVal – maximum value which will have non-zero frequency  >f[i] – frequency of value with index i, i = 1 .. MaxVal  >c[i] – cumulative frequency for index i (f[1] + f[2] + ... + f[i])  >tree[i] – sum of frequencies stored in BIT with index i (latter will be described what index means);sometimes we will write tree frequency instead sum of frequencies stored in BIT
+>
+
+tree[i] 和 f[i] 的对应关系：
+
+>tree[idx] is sum of frequencies from index (idx – 2^r + 1) to index idx (look at the Table 1.1 for clarification). We also write that idx is responsible for indexes from (idx - 2^r + 1) to idx.
+
+
+看一个例子应该清楚许多：
+
+ i | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16  
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+f[i] | 1 | 0 | 2 | 1 | 1 | 3 | 0 | 4 | 2 | 5 | 2 | 2 | 3 | 1 | 0 | 2
+c[i] | 1 | 1 | 3 | 4 | 5 | 8 | 8 | 12 | 14 | 19 | 21 | 23 | 26 | 27 | 27 | 29  
+tree[i] | 1 | 1 | 2 | 4 | 1 | 4 | 0 | 1 | 2 | 2 | 7 | 2 | 11 | 3 | 4 | 0 | 29 
+
+
+
