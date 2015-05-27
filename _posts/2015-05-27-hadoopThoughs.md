@@ -73,9 +73,9 @@ class PacketResponder implements Runnable {
 
 ### Request top-level function and request identifiers
 
-User should indicate the top-level method (the start point of a request), for example, developer should indicate function **write_block** (line 14) as the top-level function for *write request*, and function **readBlock** (line 22) as the top-level function for *read request*. User can also optionally indicate the request IDs, in **write_block**, the **ExtendedBlock block**'s fields (e.g., block ID and pool ID) can be marked as the request IDs.
+User should indicate the **top-level method** (the start point of a request), for example, developer should indicate function **write_block** (line 14) as the top-level function for *write request*, and function **readBlock** (line 22) as the top-level function for *read request*. User can also optionally indicate the request IDs, in **write_block**, the **ExtendedBlock block**'s fields (e.g., block ID and pool ID) can be marked as the request IDs.
 
-### request recording for current JVM
+### Request recording for current JVM
 
 Java agent should record information inside the current JVM of a given request with ease. For each execution of request top-level function (e.g. **write_block**), java agent will generate an *ID*, *record request identifiers* (if marked by the user), *start time*, and *end time*. The end time is the time when the function and all threads spawned by the function terminate. 
 
@@ -87,6 +87,8 @@ One possible solution is to use decorated data structures. Let's assume nodes in
 
 When another node retrives the data, the java agent of that node intercepts and checks if it contains decoration. If it is,  it will mark the **source request field** of requests which accesses data to be the request indicated in the decoration.  
 
+### image -- decoration on communication data 
+![](http://i.imgur.com/OuIiinX.png)
 
 [^jvmtool]: [http://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html](http://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html)
 [^lprof]: [http://www.eecg.toronto.edu/~yuan/papers/lprof_osdi14.pdf](http://www.eecg.toronto.edu/~yuan/papers/lprof_osdi14.pdf)
