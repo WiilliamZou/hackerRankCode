@@ -42,31 +42,33 @@ profiler 可以作为一个java agent.
 {% highlight java linenos=table %}
 class DataXceiver implements Runnable {
   public void run() {
-	do { //handle one request per iteration
-	  switch (readOpCode()) {
-		case WRITE_BLOCK: // a write request
-		  writeBlock(proto.getBlock(), ..); break;
-		 case READ_BLOCK: // a read request
-	      readBlock(proto.getBlock(), ..); break;
-	    } //proto.getBlock: deserialize the request 
-	 }while (!socket.isClosed());
-   }
-   void writeBlock(ExtendedBlock block..) {
-	  LOG.info("Receiving block " + block);
-	  send.writeBlock(block,..); //send to next DN
-	  responder.start();
-	}
+   do { //handle one request per iteration
+	switch (readOpCode()) {
+	 case WRITE_BLOCK: // a write request
+	  writeBlock(proto.getBlock(), ..); 
+	  break;
+     case READ_BLOCK: // a read request
+      readBlock(proto.getBlock(), ..); 
+      break;
+	 } //proto.getBlock: deserialize the request 
+	}while (!socket.isClosed());
+  }
+  void writeBlock(ExtendedBlock block..) {
+  	LOG.info("Receiving block " + block);
+  	send.writeBlock(block,..); //send to next DN
+  	responder.start();
+  }
 }
 
 /* PacketResponder handles the ack responses */
 class PacketResponder implements Runnable {
   public void run() {
-	  ack.readField(downstream); //read ack
-	  LOG.info("Received block" + block);
-	  replyAck(upstream);
-	  LOG.info(myString + " terminating");
+    ack.readField(downstream); //read ack
+    LOG.info("Received block" + block);
+    replyAck(upstream);
+    LOG.info(myString + " terminating");
 	}
-}			
+}
 {% endhighlight %}
 
 ### java profiler inside the current JVM
