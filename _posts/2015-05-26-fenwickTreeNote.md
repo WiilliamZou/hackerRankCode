@@ -119,7 +119,7 @@ void update(int idx ,int val){    while (idx <= MaxVal){        tree[idx] += v
 
 ### scale 的实现
 
-{% highlight java linenos=table %}
+{% highlight java linenos %}
 void scale (int c) {
 	for (int i = 1; i <= MaxVal; i++)
 		tree[i] = tree[i] / c;
