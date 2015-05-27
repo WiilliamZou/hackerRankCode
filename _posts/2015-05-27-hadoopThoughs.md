@@ -26,3 +26,7 @@ shortinfo: 配置eclipse c++ unit test.
 解决的方式可能是sends stats. 
 
 这个要相关的文章。
+
+one possible solution: tracing 
+
+adding a source part in the data structure 
