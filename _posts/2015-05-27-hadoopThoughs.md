@@ -15,9 +15,14 @@ shortinfo: 配置eclipse c++ unit test.
 
 ![](http://i.imgur.com/5knHM2R.png)
 
-基本想法：
+###基本想法：
 
 1. 让 developer 标记	top level methods
 2. 让 developer 标记 request identifier.
 
- 
+###来自分布式主要挑战
+
+最主要的挑战是多个JVM之间的交互。这是主要的挑战。 
+解决的方式可能是sends stats. 
+
+这个要相关的文章。
