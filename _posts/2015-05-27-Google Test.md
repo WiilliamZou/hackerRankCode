@@ -4,10 +4,12 @@ title:  Eclipse 配置 google test c++ 单元测试环境
 categories: [环境配置]
 tags: [eclipse, c plus plus, unit test]
 fullview: false
-
+shortinfo: 配置eclipse c++ unit test. 
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+
 ### 什么是单元测试？
 
 根据[wiki](http://zh.wikipedia.org/wiki/单元测试)的解释，
