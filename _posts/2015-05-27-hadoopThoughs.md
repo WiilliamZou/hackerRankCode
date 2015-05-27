@@ -27,6 +27,16 @@ shortinfo: 配置eclipse c++ unit test.
 
 这个要相关的文章。
 
+###java agent 介绍
+
 one possible solution: tracing 
 
 adding a source part in the data structure 
+
+想到一个有意思的想法。
+
+profiler 可以作为一个java agent. 
+
+### java profiler inside the current JVM
+
+### java profiler inside 
