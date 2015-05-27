@@ -19,4 +19,5 @@ fullview: false
 
 ![](http://i.imgur.com/E5zldVY.png)
 
+
 明天计划学习这个帖子：[介绍全新单元测试框架组合： googletest 与 googlemock](http://www.ibm.com/developerworks/cn/linux/l-cn-cppunittest/index.html)。
