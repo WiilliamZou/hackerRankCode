@@ -375,3 +375,133 @@ int main() {
     return 0;
 }
 {% endhighlight %}
+
+
+我写的solution:
+
+{% highlight java %}
+import java.io.File;
+import java.util.Scanner;
+
+public class Solution {
+	public static void main(String[] args) {
+		Scanner consoleInput = new Scanner(System.in);
+		
+		int numOfTestCase;
+		int numOfShelf;
+		int numOfOperation;
+		numOfTestCase = consoleInput.nextInt();
+		for (int i = 0; i < numOfTestCase; i++) {
+			numOfShelf = consoleInput.nextInt();
+			ShelfBinaryIndexTree shelfSol = new ShelfBinaryIndexTree(numOfShelf);
+			for (int j = 1; j <= numOfShelf; j++) {
+				//System.out.println("init ");
+				shelfSol.init(j, consoleInput.nextInt());
+			}
+
+			numOfOperation = consoleInput.nextInt();
+			for (int j = 0; j < numOfOperation; j++) {
+				int opCode = consoleInput.nextInt();
+				if (opCode == 1) {
+					// update
+					shelfSol.update(consoleInput.nextInt(),
+							consoleInput.nextInt());
+				} else {
+					// query
+					System.out.println(shelfSol.solve(consoleInput.nextInt(),
+							consoleInput.nextInt(), consoleInput.nextInt()));
+				}
+			}
+		}
+		consoleInput.close();
+	}
+}
+
+class ShelfBinaryIndexTree {
+	private int[][] tree;
+	private int[] array;
+	
+	public static final int max_y = 1000;
+	private int length;
+
+	private void update(int x, int y, int val) {
+	
+		while (x <= this.length) {
+			int y1 = y;
+			while (y1 <= max_y) {
+				tree[x][y1] += val;
+				y1 += (y1 & -y1);
+			}
+			x += (x & -x);
+		}
+	}
+
+	private int read(int x, int y) {
+		int sum = 0;
+		while (x > 0) {
+			int y1 = y;
+			while (y1 > 0) {
+				sum += tree[x][y1];
+				y1 -= (y1 & -y1);
+			}
+			x -= (x & -x);
+		}
+		return sum;
+	}
+
+	public int solve(int l, int r, int k) {
+		int lo = 1;
+		int hi = max_y;
+		int mid;
+		int ans = -1;
+		while (lo <= hi) {
+			mid = (lo + hi) / 2;
+			int v2 = read(r, mid);
+			int v1 = read(l - 1, mid);
+			int cur = v2 - v1;
+			if (cur >= k) {
+				ans = mid;
+				hi = mid - 1;
+			} else
+				lo = mid + 1;
+		}
+
+		return ans;
+	}
+
+	/**
+	 * initiate the number of books in shelf
+	 * 
+	 * @param x
+	 *            the index of shelf
+	 * @param val
+	 *            number of books of the shelf
+	 */
+	public void init(int x, int val) {
+		//System.out.println("in init, x= " + x + " , val = " + val);
+		array[x] = val;
+		update(x, val, 1);
+	}
+
+	/**
+	 * update the number of books in shelf
+	 * 
+	 * @param x
+	 *            the index of shelf
+	 * @param val
+	 *            number of books of the shelf
+	 */
+	public void update(int x, int val) {
+		//System.out.println("in update, x= " + x + " , val = " + val);
+		update(x, array[x], -1);
+		array[x] = val;
+		update(x, array[x], 1);
+	}
+
+	public ShelfBinaryIndexTree(int length) {
+		this.length = length;
+		tree = new int[length + 4][1005];
+		array = new int[length + 4];
+	}
+}
+{% endhighlight %}
