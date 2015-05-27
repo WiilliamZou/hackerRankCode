@@ -15,7 +15,7 @@ An idea to implement request-based profiler for distributed system is to annotat
 
 ### Output format 
 
-One possible format of profiler output would be a set of request record entry. Request record may like: 
+One possible format of profiler output would be a set of request record entry. Record entry format may be like the following ones: 
 
 request ID | start time | end time | IP | ID | source request ID   
 --- | --- | --- | --- | --- | --------|
@@ -85,7 +85,7 @@ In distributed systems, requests may traverse different nodes.  Recording inform
 
 One possible solution is to use decorated data structures. Let's assume nodes in the distributes system use IO (such as netowrk sockets) to coomunication. More specifically, the object serialization/deserialization is adopted as the basic communication mechanism. When the node attempts to send data, java agent intercepts and checks this communication is caused by a request which is currently being traced. If it is, the decoration information is added into the orginal object serialization data. The decoration includes the ID, the request identifiers, start time and source IP of source request. 
 
-When another node retrives the data, the java agent of that node intercepts and checks if it contains decoration. If it is,  it will mark the **source request field** of requests which accesses data to be the request indicated in the decoration.  
+When another node retrives the data, the java agent of that node intercepts and checks if it contains decoration. If it is,  it will mark the **source request field** of requests which accesses data (like taint analysis) to be the request indicated in the decoration.
 
 ### image -- decoration on communication data 
 ![](http://i.imgur.com/OuIiinX.png)
@@ -93,8 +93,11 @@ When another node retrives the data, the java agent of that node intercepts and 
 
 ## thoughts 
 
-* Although the proposed method does not change the code of system, The software's class is modified dynamically via Java Agent, is it non-instrusive? A main highlight of lprof paper  [^lprof] is its non-instrusion feature. 
+* Although the proposed method does not change the code of system, The software's class is modified (to enable decoration ) dynamically via Java Agent, is it non-instrusive? A main highlight of lprof paper   is its non-instrusion feature. [^lprof]
 
+## Next step
+* Inspect the jvmtool APIs which is useful to implement decoration. [^jvmtool]
+* Read the literature about taint analysis, which is useful to find the requests which is triggered by another request via network communication. 
 
 [^jvmtool]: [http://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html](http://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html)
 [^lprof]: [http://www.eecg.toronto.edu/~yuan/papers/lprof_osdi14.pdf](http://www.eecg.toronto.edu/~yuan/papers/lprof_osdi14.pdf)
