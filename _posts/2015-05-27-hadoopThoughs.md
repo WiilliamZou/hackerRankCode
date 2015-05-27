@@ -71,6 +71,17 @@ class PacketResponder implements Runnable {
 }
 {% endhighlight %}
 
-### java profiler inside the current JVM
 
-### java profiler inside 
+### Request top-level function and request identifiers
+
+user should indicate the top-level method (the start point of a request), for example, developer should indicate function **write_block** (line 14) as the top-level function for *write request*, and function **readBlock** (line 22) as the top-level function for *read request*. User can also optionally indicate the request IDs, in **write_block**, the **ExtendedBlock block**'s fields (e.g., block ID and pool ID) can be marked as the request IDs.
+
+### request recording for current JVM
+
+Java agent should record information inside the current JVM of a given request with ease. For each execution of request top-level function (e.g. **write_block**), java agent will generate an *ID*, *record request identifiers* (if marked by the user), *start time*, and *end time*. The end time is the time when the function and all threads spawned by the function terminate. 
+
+### request recording between multiple JVMs
+
+In distributed systems, requests may traverse different nodes.  Recording information among different nodes  (JVMS) would be more challenging.  
+
+One possible solution is to use decorated data structures. Let's assume nodes in the distributes system use IO (such as netowrk sockets) to coomunication. More specifically, the object serialization/deserialization is adopted as the basic communication mechanism.  
