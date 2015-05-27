@@ -15,27 +15,13 @@ shortinfo: 配置eclipse c++ unit test.
 
 ![](http://i.imgur.com/5knHM2R.png)
 
-###基本想法：
 
-1. 让 developer 标记	top level methods
-2. 让 developer 标记 request identifier.
 
-###来自分布式主要挑战
+### JVM Tool Interface and Agent 
 
-最主要的挑战是多个JVM之间的交互。这是主要的挑战。 
-解决的方式可能是sends stats. 
+The JVMTM Tool Interface (JVM TI) is a programming interface used by development and monitoring tools. It provides both a way to inspect the state and to control the execution of applications running in the JavaTM virtual machine (VM). [^jvmtool] 
 
-这个要相关的文章。
-
-###java agent 介绍
-
-one possible solution: tracing 
-
-adding a source part in the data structure 
-
-想到一个有意思的想法。
-
-profiler 可以作为一个java agent. 
+JVMTI is helpful not only to record executation state but also to re-define the content of class that is loaded at run-time. 
 
 ### example code 
 
@@ -84,4 +70,9 @@ Java agent should record information inside the current JVM of a given request w
 
 In distributed systems, requests may traverse different nodes.  Recording information among different nodes  (JVMS) would be more challenging.  
 
-One possible solution is to use decorated data structures. Let's assume nodes in the distributes system use IO (such as netowrk sockets) to coomunication. More specifically, the object serialization/deserialization is adopted as the basic communication mechanism.  
+One possible solution is to use decorated data structures. Let's assume nodes in the distributes system use IO (such as netowrk sockets) to coomunication. More specifically, the object serialization/deserialization is adopted as the basic communication mechanism. When the node attempts to send data, java agent intercepts and checks this communication is caused by a request which is currently being traced. If it is, the decoration information is added into the orginal object serialization data. The decoration includes the ID, the request identifiers, start time and source IP of source request. 
+
+When another node retrives the data, the java agent of that node intercepts and checks if it contains decoration. If it is,  it will mark the **source request field** of requests which accesses data to be the request indicated in the decoration.  
+
+
+[^jvmtool]: [http://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html](http://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html)
