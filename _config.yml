@@ -13,9 +13,9 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: HackerRank 解题笔记
+      title: Untiltied
 
-description: HackerRank 有很多有趣有难度的好题，值得记录和回味
+description: 
 author:
   name: WillIam 
   email: yunxiaozou@gmail.com
@@ -23,7 +23,7 @@ author:
   #twitter: dbtek
   #pinterest: asd123
   #linkedin: asd123
-  bio:  算法是优雅的力量
+  bio:  
  # email_md5: 726351295ec82e145928582f595aa3aa
 
 rss_path: feed.xml
