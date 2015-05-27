@@ -119,7 +119,7 @@ void update(int idx ,int val){    while (idx <= MaxVal){        tree[idx] += v
 
 ### scale 的实现
 
-{% highlight java linenos %}
+{% highlight java linenos=table %}
 void scale (int c) {
 	for (int i = 1; i <= MaxVal; i++)
 		tree[i] = tree[i] / c;
@@ -132,7 +132,7 @@ void scale (int c) {
 
 其实也不能叫 binary search. 因为没有 binary 的部分，实际上是确定idx 的每一个bit. 
 
-{% highlight java %}
+{% highlight java linenos=table%}
 // if in tree exists more than one index with a same
 // cumulative frequency, this procedure will return 
 // some of them (we do not know which one)
