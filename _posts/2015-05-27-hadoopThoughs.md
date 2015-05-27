@@ -90,5 +90,13 @@ When another node retrives the data, the java agent of that node intercepts and 
 ### image -- decoration on communication data 
 ![](http://i.imgur.com/OuIiinX.png)
 
+
+## thoughts 
+
+* Although the proposed method does not change the code of system, The software's class is modified dynamically via Java Agent, is it non-instrusive? A main highlight of lprof paper  [^lprof] is its non-instrusion feature. 
+
+
 [^jvmtool]: [http://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html](http://docs.oracle.com/javase/7/docs/platform/jvmti/jvmti.html)
 [^lprof]: [http://www.eecg.toronto.edu/~yuan/papers/lprof_osdi14.pdf](http://www.eecg.toronto.edu/~yuan/papers/lprof_osdi14.pdf)
+
+
