@@ -12,6 +12,8 @@ fullview: false
 
 按照[这片帖子](http://linmingren.me/blog/2013/07/eclipse中使用goolge-test来写c单元测试/)，花了一晚上的时间，终于配置好了。  
 
+
+其实安装c++单元测试工具的动力是不需要写main函数也能完成代码测试。
 截个图吧。 
 
 ![](http://i.imgur.com/E5zldVY.png)
