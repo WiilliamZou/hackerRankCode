@@ -39,6 +39,7 @@ profiler 可以作为一个java agent.
 
 ### example code 
 
+{% highlight java linenos=table %}
 class DataXceiver implements Runnable {
   public void run() {
 	do { //handle one request per iteration
@@ -65,18 +66,7 @@ class PacketResponder implements Runnable {
 	  replyAck(upstream);
 	  LOG.info(myString + " terminating");
 	}
-}
-
-/* PacketResponder handles the ack responses */
-class PacketResponder implements Runnable {
-	public void run() {
-		ack.readField(downstream); //read ack
-		LOG.info("Received block" + block);
-		replyAck(upstream);
-		LOG.info(myString + " terminating");
-	}
-}
-			
+}			
 {% endhighlight %}
 
 ### java profiler inside the current JVM
