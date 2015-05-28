@@ -12,7 +12,7 @@ shortinfo: almost sorted interval
 
 原题在这里：[almost sorted interval](https://www.hackerrank.com/challenges/almost-sorted-interval)，看答案都没有看懂。。有点悲剧。看代码好了。
 
-{% highlight java linenos=table %}
+{% highlight c++ linenos %}
 #include <cstdio>
 #include <cstring>
 #include <cmath>
