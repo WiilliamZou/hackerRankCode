@@ -72,7 +72,7 @@ int main(void) {
 1. 计算**left**数组和**right**数组。  
 2. 根据**left**,**right**数组算出ans.
 
-## 计算*left*数组和*right*数组
+## 计算*left*数组和*right*数组  
 
 
 ## 根据**left**,**right**数组算出ans
