@@ -118,7 +118,18 @@ public static void main(String[] args) {
 		
 	}
 {% endhighlight %}
-### 
+
+### int bit[N]
+
+又是 binary index tree, 这个数据结构的上镜率很高啊。
+
+但是这个数据结构的用法很多样。这次的用法又是不一样。 
+
+top coder 说：
+
+> Now it is often used for storing frequencies and manipulating cumulative frequency tables.
+
+只要和出现个数相关的东西都可能用到这个数据结构。
 
 算法基本上分两步：  
 1. 计算**left**数组和**right**数组。  
