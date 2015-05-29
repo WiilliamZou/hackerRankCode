@@ -72,17 +72,26 @@ int main(void) {
 
 >理解一个程序，首先要理解这个程序的核心数据结构。
 
-关键的，比较tricky 的数据结构主要是
+关键的，比较tricky的数据结构主要是
 
-{% highlight c++ linenos %}
+{% highlight c++ %}
 
 vector<int> r[N];
 int bit[N];
 
 {% endhighlight %}
 
-这个程序的核心数据结构是：
+对应程序的 line 16, 17. 我们一个一个来看：
 
+###  vector<int> r[N]
+
+实际上，这个相当于反函数。
+
+> 定义 \\(f(x) = left(x)\\)
+
+那么： 
+
+$$ r[x] = \{ x| x = f^{-1}(x) \} $$
 
 
 算法基本上分两步：  
