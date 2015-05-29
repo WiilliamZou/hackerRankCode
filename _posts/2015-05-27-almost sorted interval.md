@@ -68,6 +68,23 @@ int main(void) {
 
 代码相当的短小精悍。
 
+## 数据结构  
+
+>理解一个程序，首先要理解这个程序的核心数据结构。
+
+关键的，比较tricky 的数据结构主要是
+
+{% highlight c++ linenos %}
+
+vector<int> r[N];
+int bit[N];
+
+{% endhighlight %}
+
+这个程序的核心数据结构是：
+
+
+
 算法基本上分两步：  
 1. 计算**left**数组和**right**数组。  
 2. 根据**left**,**right**数组算出ans.
