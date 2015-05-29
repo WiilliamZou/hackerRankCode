@@ -76,5 +76,5 @@ int main(void) {
 
 
 ## 根据**left**,**right**数组算出ans
-
+line 61-64对应*left[R]<L*; line 65对应*right[L]>R*。
 
