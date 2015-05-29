@@ -105,7 +105,18 @@ List[] r = new List[n];
 因为Java 不能创建generic type array, [^javaArray] 可能更好的写法是使用map,但是感觉写起来有点繁琐：
 
 {% highlight java %}
-HashMap<Integer, ArrayList<Integer>> r = new HashMap<Integer, ArrayList<Integer>>();
+public static void main(String[] args) {
+		HashMap<Integer, ArrayList<Integer>> r = new HashMap<Integer, ArrayList<Integer>>();
+		
+		//r.get(1).add(1);
+		push_back(r, 1, 1);
+	}
+	private static void push_back(HashMap<Integer, ArrayList<Integer>> r, int x, int y) {
+		if (r.get(x) == null) 
+			r.put(x, new ArrayList<Integer>());
+		r.get(x).add(y);
+		
+	}
 {% endhighlight %}
 ### 
 
