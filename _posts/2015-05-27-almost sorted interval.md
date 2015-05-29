@@ -102,7 +102,12 @@ List[] r = new List[n];
 {% endhighlight %}
 ### 
 
-因为Java 不能创建generic type array, [^javaArray]
+因为Java 不能创建generic type array, [^javaArray] 可能更好的写法是使用map,但是感觉写起来有点繁琐：
+
+{% highlight java %}
+HashMap<Integer, ArrayList<Integer>> r = new HashMap<Integer, ArrayList<Integer>>();
+{% endhighlight %}
+### 
 
 算法基本上分两步：  
 1. 计算**left**数组和**right**数组。  
