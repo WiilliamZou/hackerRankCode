@@ -85,14 +85,24 @@ int bit[N];
 
 ###  vector<int> r[N]
 
-实际上，这个相当于反函数。
+简而言之，相当于LEFT[x]的反函数。
 
 > 定义 \\(f(x) = left(x)\\)
 
 那么： 
 
-r[x] = \{ x| x = f^{-1}(x) \}
+> \\(r[x] = \{ x| x = f^{-1}(x) \}\\)
 
+反函数可能有多个映射值，需要存到vector中。
+
+Java 中没有 vector,不过可以用 arraylist 代替，在Java中可以这样写：
+
+{% highlight java %}
+List[] r = new List[n];
+{% endhighlight %}
+### 
+
+因为Java 不能创建generic type array, [^javaArray]
 
 算法基本上分两步：  
 1. 计算**left**数组和**right**数组。  
@@ -104,3 +114,5 @@ r[x] = \{ x| x = f^{-1}(x) \}
 ## 根据**left**,**right**数组算出ans
 line 61-64对应*left[R]<L*; line 65对应*right[L]>R*。
 
+
+[^javaArray]:[http://stackoverflow.com/questions/5662394/java-1-6-creating-an-array-of-listt](http://stackoverflow.com/questions/5662394/java-1-6-creating-an-array-of-listt)
