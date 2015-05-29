@@ -91,8 +91,8 @@ int bit[N];
 
 那么： 
 
-> \\(r[x] = \{ x| x = f^{-1}(x) \}\\)
-
+> \\(r[x] = \{ x| x = f^{-1}(x) \}\\)  
+  
 反函数可能有多个映射值，需要存到vector中。
 
 Java 中没有 vector,不过可以用 arraylist 代替，在Java中可以这样写：
@@ -104,7 +104,7 @@ List[] r = new List[n];
 
 因为Java 不能创建generic type array, [^javaArray] 可能更好的写法是使用map,但是感觉写起来有点繁琐：
 
-{% highlight java %}
+{% highlight java linenos%}
 public static void main(String[] args) {
 		HashMap<Integer, ArrayList<Integer>> r = new HashMap<Integer, ArrayList<Integer>>();
 		
