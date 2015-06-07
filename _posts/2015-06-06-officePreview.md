@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  将hadoop 源代码导入eclipse项目。
-categories: [Hadoop]
-tags:  [环境配置, Java]
+title:  Office 2016 Preview for Mac 
+categories: [office]
+tags:  [Mac]
 fullview: false
-shortinfo: 将 hadoop 源代码导入eclipse 项目. 
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
