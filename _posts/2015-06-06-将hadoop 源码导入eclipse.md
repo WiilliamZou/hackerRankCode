@@ -25,6 +25,7 @@ shortinfo: 将 hadoop 源代码导入eclipse 项目.
 
 ![](http://i.imgur.com/bXV9JZL.png?1)
 
-下一步看 apache hadoop wiki。
+相关文档
 
 * [Apache Hadoop Wiki](http://wiki.apache.org/hadoop/)
+* [搭建 Hadoop 源代码阅读环境](http://www.winilog.com/?p=42)
