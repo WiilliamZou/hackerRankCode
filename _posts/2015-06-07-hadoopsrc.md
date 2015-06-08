@@ -11,4 +11,4 @@ fullview: false
 
 推荐一本似乎靠谱的hadoop源代码描述的书：
 
-* (Hadoop源代码分析(完整版).pdf)[http://vdisk.weibo.com/s/bef7_LzOlZB5]
+* [Hadoop源代码分析(完整版).pdf](http://vdisk.weibo.com/s/bef7_LzOlZB5)
