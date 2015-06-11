@@ -23,4 +23,6 @@ fullview: false
 
 [Hadoop Common JavaDoc](http://wiilliamzou.github.io/hadoopCommonDoc/)
 
+[Hadoop HDFS JavaDoc](http://wiilliamzou.github.io/hadoopHDFSJavadoc/)
+
 github 静态建站真是好用。
